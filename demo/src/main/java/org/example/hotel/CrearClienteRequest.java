@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.2 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2020.04.04 a las 11:26:28 PM CST 
+// Generado el: 2020.04.17 a las 08:30:40 PM CDT 
 //
 
 
@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="Nombre" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="Apellido" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="Correo" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="Telefono" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="Telefono" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -61,8 +61,8 @@ public class CrearClienteRequest {
     protected String apellido;
     @XmlElement(name = "Correo", required = true)
     protected String correo;
-    @XmlElement(name = "Telefono")
-    protected int telefono;
+    @XmlElement(name = "Telefono", required = true)
+    protected String telefono;
 
     /**
      * Obtiene el valor de la propiedad usuario.
@@ -187,16 +187,24 @@ public class CrearClienteRequest {
     /**
      * Obtiene el valor de la propiedad telefono.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
     /**
      * Define el valor de la propiedad telefono.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setTelefono(int value) {
+    public void setTelefono(String value) {
         this.telefono = value;
     }
 

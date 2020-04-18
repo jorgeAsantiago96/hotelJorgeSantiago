@@ -82,7 +82,7 @@
 				<xs:element type="xs:string" name="Nombre" />
 				<xs:element type="xs:string" name="Apellido" />
 				<xs:element type="xs:string" name="Correo" />
-				<xs:element type="xs:int" name="Telefono" />
+				<xs:element type="xs:string" name="Telefono" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

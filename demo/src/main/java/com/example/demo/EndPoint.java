@@ -14,6 +14,8 @@ import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
+import Controller.ClienteDAO;
+
 
 @Endpoint
 public class EndPoint {
@@ -108,9 +110,18 @@ public class EndPoint {
 		  String nombre = peticion.getNombre();
 		  String apellido = peticion.getApellido();
 		  String correo = peticion.getCorreo();
-		  int telefono = peticion.getTelefono();
+		  String telefono = peticion.getTelefono();
 		  
-		  respuesta.setRespuesta("usuario creado corectamente");
+			 ClienteDAO cl = new ClienteDAO();
+			
+		   if(cl.registrarCliente(usuario, contraseña, nombre, apellido, correo, telefono)) {
+			   respuesta.setRespuesta("usuario creado corectamente");
+		   }else {
+			   respuesta.setRespuesta("error al crear el usuario");
+		   }
+		   
+		   
+		  
 		  return respuesta;
 	  }
 }
