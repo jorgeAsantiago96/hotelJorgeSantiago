@@ -25,8 +25,8 @@
 				<xs:element type="xs:int" name="NumHabitacion" />
 				<xs:element type="xs:string" name="UsuarioCliente" />
 				<xs:element type="xs:int" name="NumDias" />
-				<xs:element type="xs:date" name="FechaLLegada" />
-				<xs:element type="xs:date" name="FechaSalida" />
+				<xs:element type="xs:string" name="FechaLLegada" />
+				<xs:element type="xs:string" name="FechaSalida" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -93,5 +93,22 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+	
+			<xs:element name="EliminarClienteRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="Usuario" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EliminarClienteResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="respuesta" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
 
 </xs:schema>
