@@ -12,10 +12,10 @@ public class Conexion {
 
 	String driver = "com.mysql.jdbc.Driver";
 	String database =  "hotel1";
-	String hostname = "3.133.140.0";
+	String hostname = "localhost";
 	String port = "3306";
 	String url = "jdbc:mysql://"+hostname+":"+port+"/"+database+"";
-	String username = "hotel1";
+	String username = "root";
 	String password = "Pitusmaximus12.";
 	
 	public Connection connect() {
