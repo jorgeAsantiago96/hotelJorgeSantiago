@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.2 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2020.04.27 a las 11:17:38 PM CDT 
+// Generado el: 2020.04.30 a las 01:57:23 AM CDT 
 //
 
 
@@ -130,6 +130,54 @@ public class ObjectFactory {
      */
     public EliminarClienteResponse createEliminarClienteResponse() {
         return new EliminarClienteResponse();
+    }
+
+    /**
+     * Create an instance of {@link EditarClienteMostrarInfoRequest }
+     * 
+     */
+    public EditarClienteMostrarInfoRequest createEditarClienteMostrarInfoRequest() {
+        return new EditarClienteMostrarInfoRequest();
+    }
+
+    /**
+     * Create an instance of {@link EditarClienteMostrarInfoResponse }
+     * 
+     */
+    public EditarClienteMostrarInfoResponse createEditarClienteMostrarInfoResponse() {
+        return new EditarClienteMostrarInfoResponse();
+    }
+
+    /**
+     * Create an instance of {@link EditarClienteCambiarInfoRequest }
+     * 
+     */
+    public EditarClienteCambiarInfoRequest createEditarClienteCambiarInfoRequest() {
+        return new EditarClienteCambiarInfoRequest();
+    }
+
+    /**
+     * Create an instance of {@link EditarClienteCambiarInfoResponse }
+     * 
+     */
+    public EditarClienteCambiarInfoResponse createEditarClienteCambiarInfoResponse() {
+        return new EditarClienteCambiarInfoResponse();
+    }
+
+    /**
+     * Create an instance of {@link CompraRequest }
+     * 
+     */
+    public CompraRequest createCompraRequest() {
+        return new CompraRequest();
+    }
+
+    /**
+     * Create an instance of {@link CompraResponse }
+     * 
+     */
+    public CompraResponse createCompraResponse() {
+        return new CompraResponse();
     }
 
 }

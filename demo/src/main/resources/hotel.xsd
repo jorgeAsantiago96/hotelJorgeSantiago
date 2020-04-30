@@ -109,6 +109,64 @@
 		</xs:complexType>
 	</xs:element>
 
+	<xs:element name="EditarClienteMostrarInfoRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="Usuario" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EditarClienteMostrarInfoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="mensaje" />
+				<xs:element type="xs:string" name="UsuarioR" />
+				<xs:element type="xs:string" name="ContraseñaR" />
+				<xs:element type="xs:string" name="NombreR" />
+				<xs:element type="xs:string" name="ApellidoR" />
+				<xs:element type="xs:string" name="CorreoR" />
+				<xs:element type="xs:string" name="TelefonoR" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+		<xs:element name="EditarClienteCambiarInfoRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="UsuarioR" />
+				<xs:element type="xs:string" name="ContraseñaR" />
+				<xs:element type="xs:string" name="NombreR" />
+				<xs:element type="xs:string" name="ApellidoR" />
+				<xs:element type="xs:string" name="CorreoR" />
+				<xs:element type="xs:string" name="TelefonoR" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EditarClienteCambiarInfoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="Respuesta" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+			<xs:element name="CompraRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:int" name="numReservacionC" />
+				<xs:element type="xs:string" name="fechacompra" />
+				<xs:element type="xs:int" name="monto" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CompraResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="Respuesta" />
+				<xs:element type="xs:int" name="numeroCompra" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 
 
 </xs:schema>

@@ -25,7 +25,9 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="respuesta" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="numReservacionC" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="fechacompra" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="monto" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,36 +38,72 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "respuesta"
+    "numReservacionC",
+    "fechacompra",
+    "monto"
 })
-@XmlRootElement(name = "EliminarClienteResponse")
-public class EliminarClienteResponse {
+@XmlRootElement(name = "CompraRequest")
+public class CompraRequest {
 
+    protected int numReservacionC;
     @XmlElement(required = true)
-    protected String respuesta;
+    protected String fechacompra;
+    protected int monto;
 
     /**
-     * Obtiene el valor de la propiedad respuesta.
+     * Obtiene el valor de la propiedad numReservacionC.
+     * 
+     */
+    public int getNumReservacionC() {
+        return numReservacionC;
+    }
+
+    /**
+     * Define el valor de la propiedad numReservacionC.
+     * 
+     */
+    public void setNumReservacionC(int value) {
+        this.numReservacionC = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad fechacompra.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getRespuesta() {
-        return respuesta;
+    public String getFechacompra() {
+        return fechacompra;
     }
 
     /**
-     * Define el valor de la propiedad respuesta.
+     * Define el valor de la propiedad fechacompra.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setRespuesta(String value) {
-        this.respuesta = value;
+    public void setFechacompra(String value) {
+        this.fechacompra = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad monto.
+     * 
+     */
+    public int getMonto() {
+        return monto;
+    }
+
+    /**
+     * Define el valor de la propiedad monto.
+     * 
+     */
+    public void setMonto(int value) {
+        this.monto = value;
     }
 
 }

@@ -168,6 +168,101 @@ public class ClienteDAO {
 		
 		return resultado;
 	}
+	
+	public ClienteDAO GetCliente(String n) {
+		boolean resultado = false;
+		this.database = new Conexion();
+		String usr="";
+		String pas="";
+		String nom="";
+		String ape="";
+		String corr="";
+		String tel="";
+		this.setUsuario(usr);
+	    this.setContrasena(pas);
+	    this.setNombre(nom);
+	    this.setApellido(ape);
+	    this.setCorreo(corr);
+	    this.setTelefono(tel);
+		
+		
+		try
+	    {
+		   
+	      String query = "select * from Cliente where usuario= '"+n+"'";
+	      java.sql.Statement st = this.database.connect().createStatement();
+	      ResultSet rs = st.executeQuery(query);
+	      
+	      while (rs.next())
+	      {
+	        usr = rs.getString("usuario");
+	        pas = rs.getString("contrasena");
+	        nom = rs.getString("nombre");
+	        ape = rs.getString("apellido");
+	        corr = rs.getString("correo");
+	        tel = rs.getString("telefono");
+	      }
+	      
 
+	      if(n.equals(usr)) {
+		      this.setUsuario(usr);
+		      this.setContrasena(pas);
+		      this.setNombre(nom);
+		      this.setApellido(ape);
+		      this.setCorreo(corr);
+		      this.setTelefono(tel);
+	      }
+
+	      
+	      st.close();
+	    }
+	    catch (Exception e)
+	    {
+	      System.err.println("Got an exception! ");
+	      System.err.println(e.getMessage());
+	    }
+		
+		return this;
+		
+	}
+	
+	public boolean EditarCliente(String usuario, String pass,String nom, String ape, String correo,String telefono) {
+		boolean resultado = false;
+		this.database = new Conexion();
+		String r="";
+		String rp="";
+		
+
+		
+		try{
+	      String query = "select * from Cliente where usuario= '"+usuario+"' AND contrasena='"+pass+"'";
+	      java.sql.Statement st = this.database.connect().createStatement();
+	      ResultSet rs = st.executeQuery(query);
+	      
+	      while (rs.next())
+	      {
+	        r = rs.getString("usuario");
+	        rp = rs.getString("contrasena");
+	      }
+	      
+		  if(r.equals(usuario) && rp.equals(pass)){
+			  try {
+					System.out.println("dentro try");
+				  this.database.connect().createStatement().execute("UPDATE Cliente SET usuario='"+usuario+"', contrasena='"+pass+"', nombre= '"+nom+"', apellido= '"+ape+"', correo= '"+correo+"',telefono='"+telefono+"' WHERE usuario='"+usuario+"'");
+				  resultado=true;
+		  	  } catch (SQLException e) {
+				e.printStackTrace();
+			  }
+		  }
+	      
+	      st.close();
+	    }
+	    catch (Exception e)
+	    {
+	      System.err.println("Got an exception! ");
+	      System.err.println(e.getMessage());
+	    }		
+		return resultado;
+	}
 	
 }

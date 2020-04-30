@@ -1,6 +1,11 @@
 package Controller;
 
+import java.sql.SQLException;
+
+import database.Conexion;
+
 public class CompraDAO {
+	private Conexion database;
 	private int numeroCompra;
 	private int numReservacionC;
 	private String fechacompra;
@@ -47,6 +52,21 @@ public class CompraDAO {
 
 	public void setMonto(int monto) {
 		this.monto = monto;
+	}
+	
+	public boolean registrarCompra() {
+		boolean resultado = false;
+		String r="";
+		this.database = new Conexion();
+		
+		try {
+			this.database.connect().createStatement().execute("INSERT INTO Compras (numeroCompra, numReservacionC, fechacompra, monto) VALUES "
+					+ "("+this.numeroCompra+","+this.numReservacionC+",'"+this.fechacompra+"',"+this.monto+")");
+			resultado=true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return resultado;
 	}
 	
 	

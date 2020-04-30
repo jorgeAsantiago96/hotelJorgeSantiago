@@ -25,7 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="respuesta" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Respuesta" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="numeroCompra" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,13 +37,15 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "respuesta"
+    "respuesta",
+    "numeroCompra"
 })
-@XmlRootElement(name = "EliminarClienteResponse")
-public class EliminarClienteResponse {
+@XmlRootElement(name = "CompraResponse")
+public class CompraResponse {
 
-    @XmlElement(required = true)
+    @XmlElement(name = "Respuesta", required = true)
     protected String respuesta;
+    protected int numeroCompra;
 
     /**
      * Obtiene el valor de la propiedad respuesta.
@@ -66,6 +69,22 @@ public class EliminarClienteResponse {
      */
     public void setRespuesta(String value) {
         this.respuesta = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad numeroCompra.
+     * 
+     */
+    public int getNumeroCompra() {
+        return numeroCompra;
+    }
+
+    /**
+     * Define el valor de la propiedad numeroCompra.
+     * 
+     */
+    public void setNumeroCompra(int value) {
+        this.numeroCompra = value;
     }
 
 }

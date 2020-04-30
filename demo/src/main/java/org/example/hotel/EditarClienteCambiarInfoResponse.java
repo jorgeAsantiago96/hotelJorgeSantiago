@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="respuesta" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Respuesta" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -38,10 +38,10 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "respuesta"
 })
-@XmlRootElement(name = "EliminarClienteResponse")
-public class EliminarClienteResponse {
+@XmlRootElement(name = "EditarClienteCambiarInfoResponse")
+public class EditarClienteCambiarInfoResponse {
 
-    @XmlElement(required = true)
+    @XmlElement(name = "Respuesta", required = true)
     protected String respuesta;
 
     /**

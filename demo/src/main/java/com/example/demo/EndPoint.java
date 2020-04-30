@@ -16,6 +16,7 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import Controller.ClienteDAO;
+import Controller.CompraDAO;
 import Controller.HabitacionDAO;
 import Controller.ReservacionDAO;
 
@@ -148,5 +149,82 @@ public class EndPoint {
 			}		
 			
 		 	return respuesta;
+	  }
+	 
+	 @PayloadRoot(namespace="http://www.example.org/hotel", localPart="EditarClienteMostrarInfoRequest")
+	 
+	  @ResponsePayload
+	  public EditarClienteMostrarInfoResponse EditarClienteMostrarInfo ( @RequestPayload EditarClienteMostrarInfoRequest peticion) {
+		 EditarClienteMostrarInfoResponse  respuesta = new EditarClienteMostrarInfoResponse();
+		 
+		 	ClienteDAO cliente = new ClienteDAO();
+			String user = peticion.getUsuario();
+			
+			respuesta.setMensaje("Error no se ha podido encontrar la informacion del usuario o este no existe");
+			respuesta.setUsuarioR(" ");
+		    respuesta.setContraseñaR(" ");
+		    respuesta.setNombreR(" ");
+		    respuesta.setApellidoR(" ");
+		    respuesta.setCorreoR(" ");
+		    respuesta.setTelefonoR(" ");
+			
+			cliente.GetCliente(user);
+			if(cliente.getUsuario().equals(user)) {
+				respuesta.setMensaje("Se ha encontrado la informacion del usuario");
+			    respuesta.setUsuarioR(cliente.getUsuario());
+			    respuesta.setContraseñaR(cliente.getContrasena());
+			    respuesta.setNombreR(cliente.getNombre());
+			    respuesta.setApellidoR(cliente.getApellido());
+			    respuesta.setCorreoR(cliente.getCorreo());
+			    respuesta.setTelefonoR(cliente.getTelefono());
+			}
+			
+		 	return respuesta;
+	  }
+	 
+	 @PayloadRoot(namespace="http://www.example.org/hotel", localPart="EditarClienteCambiarInfoRequest")
+	 
+	  @ResponsePayload
+	  public EditarClienteCambiarInfoResponse EditarClienteCambiarInfo ( @RequestPayload EditarClienteCambiarInfoRequest peticion) {
+		 EditarClienteCambiarInfoResponse  respuesta = new EditarClienteCambiarInfoResponse();
+		 ClienteDAO cliente = new ClienteDAO();
+				 
+		 	String user = peticion.getUsuarioR();
+		 	String pass = peticion.getContraseñaR();
+		 	String nom = peticion.getNombreR();
+		 	String ape = peticion.getApellidoR();
+		 	String corr = peticion.getCorreoR();
+		    String tel = peticion.getTelefonoR();
+		 	
+		    if(cliente.EditarCliente(user, pass, nom, ape, corr, tel)) {
+		    	respuesta.setRespuesta("Los datos del usuario se han actualizado correctamente");
+		    }else {
+		    	respuesta.setRespuesta("Error no se han podido actualizar correctamente los datos del usuario");
+		    }
+		 
+		 
+		 	return respuesta;
+	  }
+	 
+	 @PayloadRoot(namespace="http://www.example.org/hotel", localPart="CompraRequest")
+	 
+	  @ResponsePayload
+	  public CompraResponse Compra ( @RequestPayload CompraRequest peticion) {
+		 CompraResponse  respuesta = new CompraResponse();
+		 ClienteDAO cliente = new ClienteDAO();
+				 
+		    int numeroCompra = (int) (Math.random() * 100) + 1;
+		 	int num = peticion.getNumReservacionC();
+		 	String fecha = peticion.getFechacompra();
+		 	int monto = peticion.getMonto();
+		 	
+		 	CompraDAO compra = new CompraDAO(numeroCompra,num,fecha,monto);
+		 		  
+		 	if (compra.registrarCompra()) {
+		 		respuesta.setRespuesta("Se ha registrado la compra correcctamente en el sistema");
+			} else {
+		 		respuesta.setRespuesta("No se ha podido registrar la compra en la base de datos");
+		 	}
+			 return respuesta;
 	  }
 }
