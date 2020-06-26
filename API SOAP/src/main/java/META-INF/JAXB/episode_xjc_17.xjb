@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="2.1" xmlns="http://java.sun.com/xml/ns/jaxb">
+  <!--
+
+Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.2 
+Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2020.05.26 a las 12:23:10 AM CDT 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://www.example.org/hotel">
+    <schemaBindings map="false">
+      <package name="org.example.hotel"/>
+    </schemaBindings>
+    <bindings scd="tns:ObtenerListaReservacionesResponse">
+      <class ref="org.example.hotel.ObtenerListaReservacionesResponse"/>
+    </bindings>
+    <bindings scd="tns:ObtenerListaHabitacionesResponse">
+      <class ref="org.example.hotel.ObtenerListaHabitacionesResponse"/>
+    </bindings>
+    <bindings scd="tns:DisponibilidadRequest">
+      <class ref="org.example.hotel.DisponibilidadRequest"/>
+    </bindings>
+    <bindings scd="tns:DisponibilidadResponse">
+      <class ref="org.example.hotel.DisponibilidadResponse"/>
+    </bindings>
+    <bindings scd="tns:ReservacionRequest">
+      <class ref="org.example.hotel.ReservacionRequest"/>
+    </bindings>
+    <bindings scd="tns:ReservacionResponse">
+      <class ref="org.example.hotel.ReservacionResponse"/>
+    </bindings>
+    <bindings scd="tns:EliminarReservacionRequest">
+      <class ref="org.example.hotel.EliminarReservacionRequest"/>
+    </bindings>
+    <bindings scd="tns:EliminarReservacionResponse">
+      <class ref="org.example.hotel.EliminarReservacionResponse"/>
+    </bindings>
+    <bindings scd="tns:AutenticacionRequest">
+      <class ref="org.example.hotel.AutenticacionRequest"/>
+    </bindings>
+    <bindings scd="tns:AutenticacionResponse">
+      <class ref="org.example.hotel.AutenticacionResponse"/>
+    </bindings>
+    <bindings scd="tns:CrearClienteRequest">
+      <class ref="org.example.hotel.CrearClienteRequest"/>
+    </bindings>
+    <bindings scd="tns:CrearClienteResponse">
+      <class ref="org.example.hotel.CrearClienteResponse"/>
+    </bindings>
+    <bindings scd="tns:EliminarClienteRequest">
+      <class ref="org.example.hotel.EliminarClienteRequest"/>
+    </bindings>
+    <bindings scd="tns:EliminarClienteResponse">
+      <class ref="org.example.hotel.EliminarClienteResponse"/>
+    </bindings>
+    <bindings scd="tns:EditarClienteMostrarInfoRequest">
+      <class ref="org.example.hotel.EditarClienteMostrarInfoRequest"/>
+    </bindings>
+    <bindings scd="tns:EditarClienteMostrarInfoResponse">
+      <class ref="org.example.hotel.EditarClienteMostrarInfoResponse"/>
+    </bindings>
+    <bindings scd="tns:EditarClienteCambiarInfoRequest">
+      <class ref="org.example.hotel.EditarClienteCambiarInfoRequest"/>
+    </bindings>
+    <bindings scd="tns:EditarClienteCambiarInfoResponse">
+      <class ref="org.example.hotel.EditarClienteCambiarInfoResponse"/>
+    </bindings>
+    <bindings scd="tns:CompraRequest">
+      <class ref="org.example.hotel.CompraRequest"/>
+    </bindings>
+    <bindings scd="tns:CompraResponse">
+      <class ref="org.example.hotel.CompraResponse"/>
+    </bindings>
+    <bindings scd="tns:ObtenerListaReservacionesRequest">
+      <class ref="org.example.hotel.ObtenerListaReservacionesRequest"/>
+    </bindings>
+    <bindings scd="tns:ObtenerListaHabitacionesRequest">
+      <class ref="org.example.hotel.ObtenerListaHabitacionesRequest"/>
+    </bindings>
+  </bindings>
+</bindings>
+
